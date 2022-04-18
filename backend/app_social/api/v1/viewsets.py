@@ -1,6 +1,6 @@
 from rest_framework import authentication
-from app_social.models import Creator
-from .serializers import CreatorSerializer
+from app_social.models import Content, Creator
+from .serializers import ContentSerializer, CreatorSerializer
 from rest_framework import viewsets
 
 
@@ -11,3 +11,12 @@ class CreatorViewSet(viewsets.ModelViewSet):
         authentication.TokenAuthentication,
     )
     queryset = Creator.objects.all()
+
+
+class ContentViewSet(viewsets.ModelViewSet):
+    serializer_class = ContentSerializer
+    authentication_classes = (
+        authentication.SessionAuthentication,
+        authentication.TokenAuthentication,
+    )
+    queryset = Content.objects.all()

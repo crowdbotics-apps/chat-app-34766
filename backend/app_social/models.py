@@ -11,4 +11,13 @@ class Creator(models.Model):
     )
 
 
+class Content(models.Model):
+    "Generated Model"
+    title = models.TextField()
+    description = models.TextField(
+        null=True,
+        blank=True,
+    )
+
+
 # Create your models here.
