@@ -20,9 +20,9 @@ class Content(models.Model):
     )
     user = models.ForeignKey(
         "app_social.Content",
-        on_delete=models.CASCADE,
         null=True,
         blank=True,
+        on_delete=models.CASCADE,
         related_name="content_user",
     )
 

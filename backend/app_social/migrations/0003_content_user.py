@@ -7,13 +7,19 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('app_social', '0002_content'),
+        ("app_social", "0002_content"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='content',
-            name='user',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='content_user', to='app_social.Content'),
+            model_name="content",
+            name="user",
+            field=models.ForeignKey(
+                blank=True,
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="content_user",
+                to="app_social.Content",
+            ),
         ),
     ]
